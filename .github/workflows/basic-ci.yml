@@ -1,6 +1,8 @@
 name: Basic CI
 on: [push, pull_request]
 permissions: read-all  # Least privilege
+env:
+  TEST2: "hello world"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,3 +10,7 @@ jobs:
     - uses: actions/checkout@v4  # Pinned version
     - name: Run a script
       run: echo ${{ secrets.DUMMY_SECRET }}
+    - name: Print TEST2
+      run: echo ${{ env.TEST2 }}
+    - name: List all available environment variables
+      run: env
