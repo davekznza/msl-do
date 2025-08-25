@@ -7,4 +7,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4  # Pinned version
     - name: Run a script
-      run: echo "Secure pipeline test"
+      run: echo ${{ secrets.DUMMY_SECRET }}
