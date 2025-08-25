@@ -1,0 +1,10 @@
+name: Basic CI
+on: [push, pull_request]
+permissions: read-all  # Least privilege
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4  # Pinned version
+    - name: Run a script
+      run: echo "Secure pipeline test"
